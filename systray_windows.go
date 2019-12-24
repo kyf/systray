@@ -17,7 +17,6 @@ import (
 var (
 	tmpDir     string
 	mainWindow *walk.MainWindow
-	webView    *walk.WebView
 	notifyIcon *walk.NotifyIcon
 
 	actions      = make(map[int32]*walk.Action)
@@ -127,12 +126,6 @@ func SetTooltip(tooltip string) {
 // ShowAppWindow shows the given URL in the application window. Only works if
 // configureAppWindow has been called first.
 func ShowAppWindow(url string) {
-	/*
-		if webView == nil {
-			return
-		}
-		webView.SetURL(url)
-	*/
 	mainWindow.SetVisible(true)
 }
 
