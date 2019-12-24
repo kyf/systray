@@ -6,8 +6,8 @@ import (
 	"crypto/md5"
 	"fmt"
 	"io/ioutil"
-	"path/filepath"
 	"os"
+	"path/filepath"
 	"sync/atomic"
 
 	"github.com/lxn/walk"
@@ -24,6 +24,14 @@ var (
 
 	okayToClose int32
 )
+
+func GetWindow() *walk.MainWindow {
+	return mainWindow
+}
+
+func GetNotifyIcon() *walk.NotifyIcon {
+	return notifyIcon
+}
 
 func nativeLoop(title string, width int, height int) {
 	var err error
