@@ -56,7 +56,7 @@ func nativeLoop(title string, width int, height int) {
 		fail("Unable to create notify icon", err)
 	}
 	if title != "" {
-		startbt, err := walk.PushButton(mainWindow)
+		startbt, err := walk.NewPushButton(mainWindow)
 		if err == nil {
 			startbt.SetText("开始服务")
 		}
