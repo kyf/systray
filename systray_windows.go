@@ -73,7 +73,7 @@ func nativeLoop(title string, width int, height int) {
 	}
 	systrayReady()
 	win.SetWindowLong(mainWindow.Handle(), win.GWL_STYLE,
-		win.GetWindowLong(mainWindow.Handle(), win.GWL_STYLE) & ^win.WS_MINIMIZEBOX & ^win.WS_MAXIMIZEBOX)
+		win.GetWindowLong(mainWindow.Handle(), win.GWL_STYLE) & ^win.WS_MINIMIZEBOX & ^win.WS_MAXIMIZEBOX & ^win.WS_THICKFRAME)
 	mainWindow.Run()
 }
 
