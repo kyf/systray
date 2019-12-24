@@ -15,10 +15,11 @@ import (
 )
 
 var (
-	tmpDir     string
-	mainWindow *walk.MainWindow
-	webView    *walk.WebView
-	notifyIcon *walk.NotifyIcon
+	tmpDir                  string
+	mainWindow              *walk.MainWindow
+	webView                 *walk.WebView
+	startBt, stopBt, exitBt *walk.PushButton
+	notifyIcon              *walk.NotifyIcon
 
 	actions      = make(map[int32]*walk.Action)
 	nextActionId int32
