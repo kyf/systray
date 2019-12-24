@@ -57,9 +57,17 @@ func nativeLoop(title string, width int, height int) {
 		fail("Unable to create notify icon", err)
 	}
 	if title != "" {
-		webView, err = walk.NewWebView(mainWindow)
+		startBt, err = walk.NewPushButton(mainWindow)
 		if err != nil {
-			fail("Unable to create web view", err)
+			fail("Unable to create push button", err)
+		}
+		stopBt, err = walk.NewPushButton(mainWindow)
+		if err != nil {
+			fail("Unable to create push button", err)
+		}
+		exitBt, err = walk.NewPushButton(mainWindow)
+		if err != nil {
+			fail("Unable to create push button", err)
 		}
 		if err := mainWindow.SetTitle(title); err != nil {
 			fail("Unable to set main title", err)
