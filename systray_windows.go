@@ -11,6 +11,7 @@ import (
 	"sync/atomic"
 
 	"github.com/lxn/walk"
+	"github.com/lxn/win"
 )
 
 var (
@@ -71,6 +72,8 @@ func nativeLoop(title string, width int, height int) {
 		}
 	}
 	systrayReady()
+	win.SetWindowLong(mainWindow.Handle(), win.GWL_STYLE,
+		win.GetWindowLong(mainWindow.Handle(), win.GWL_STYLE) & ^win.WS_MINIMIZEBOX & ^win.WS_MAXIMIZEBOX)
 	mainWindow.Run()
 }
 
